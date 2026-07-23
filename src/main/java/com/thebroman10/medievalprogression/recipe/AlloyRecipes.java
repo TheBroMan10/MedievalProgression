@@ -23,14 +23,26 @@ public class AlloyRecipes {
                     .orElse(Items.AIR);
 
 
+    private static final Item END_ENDERITE_SCRAP =
+            BuiltInRegistries.ITEM
+                    .getOptional(
+                            Identifier.fromNamespaceAndPath(
+                                    "enderitemod",
+                                    "enderite_scrap"
+                            )
+                    )
+                    .orElse(Items.AIR);
+
+
+
     public static final List<AlloyRecipe> RECIPES = List.of(
 
             new AlloyRecipe(
-                    new ItemStack(Items.GOLD_INGOT),
-                    new ItemStack(Items.NETHERITE_SCRAP),
-                    new ItemStack(ModItems.NETHERITE_NUGGET, 2),
+                    new ItemStack(Items.DIAMOND),
+                    new ItemStack(END_ENDERITE_SCRAP),
+                    new ItemStack(ModItems.ENDERITE_NUGGET, 2),
                     100,
-                    new ItemStack(ModItems.NETHERITE_NUGGET),
+                    new ItemStack(ModItems.ENDERITE_NUGGET),
                     33
             ),
 
