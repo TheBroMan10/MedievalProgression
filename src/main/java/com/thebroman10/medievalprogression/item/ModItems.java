@@ -50,20 +50,22 @@ public class ModItems {
 
     public static final Item NETHERITE_NUGGET = register(
             "netherite_nugget",
-            Item::new,
+            GlintItem::new,
             new Item.Properties()
     );
 
     public static final Item STAR_FRAGMENT = register(
             "star_fragment",
-            Item::new,
+            GlintItem::new,
             new Item.Properties()
+                    .rarity(net.minecraft.world.item.Rarity.EPIC)
     );
 
     public static final Item HALF_STAR = register(
             "half_star",
             Item::new,
             new Item.Properties()
+                    .rarity(net.minecraft.world.item.Rarity.EPIC)
     );
 
     public static final Item ENDERITE_NUGGET = register(
