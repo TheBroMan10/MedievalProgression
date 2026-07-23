@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "com.thebroman10.medievalprogression.mixin",
+  "compatibilityLevel": "JAVA_25",
+
+  "mixins": [
+  ],
+
+  "client": [
+    "OptionsMixin"
+  ],
+
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

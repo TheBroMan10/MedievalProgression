@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "medievalprogression",
+  "version": "1.0+26.1.2",
+  "name": "MedievalProgression",
+  "description": "Medieval progression",
+  "authors": [
+    "TheBroMan10",
+    "Krysgann1",
+    "Renit"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/medievalprogression/icon.png",
+  "environment": "*",
+
+  "entrypoints": {
+    "main": [
+      "com.thebroman10.medievalprogression.MedievalProgression"
+    ],
+    "client": [
+      "com.thebroman10.medievalprogression.MedievalProgressionClient"
+    ]
+  },
+
+  "mixins": [
+    "medievalprogression.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "fabric-api": "*",
+    "minecraft": "~26.1.2",
+    "java": ">=25"
+  }
+}
