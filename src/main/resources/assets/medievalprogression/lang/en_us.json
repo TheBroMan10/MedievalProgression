@@ -1,0 +1,43 @@
+{
+  "item.medievalprogression.diamond_upgrade": "Diamond Upgrade Template",
+  "item.medievalprogression.diamond_upgrade.applies_to": "Rosegold Equipment",
+  "item.medievalprogression.diamond_upgrade.ingredients": "Rosegold Ingot",
+  "item.medievalprogression.diamond_upgrade.base_slot_description": "Add rosegold armor, weapon, or tool",
+  "item.medievalprogression.diamond_upgrade.additions_slot_description": "Add Diamond",
+  
+  "trim_material.medievalprogression.rosegold": "Add Rosegold Ingot",
+
+  "itemGroup.medievalprogression.medieval_tab": "Medieval Progression",
+
+  "item.medievalprogression.alloy_furnace": "Alloy Furnace",
+  "item.medievalprogression.smooth_deepslate": "Smooth Deepslate",
+ 
+  "item.medievalprogression.diamond_upgrade_template": "\u00a7eDiamond Upgrade",
+ 
+  "item.medievalprogression.rosegold_block": "Rose Gold Block",
+  "item.medievalprogression.rosegold_ingot": "Rose Gold Ingot",
+  "item.medievalprogression.rosegold_nugget": "Rose Gold Nugget",
+
+  "item.medievalprogression.netherite_nugget": "Netherite Nugget",
+  "item.medievalprogression.star_fragment": "Nether Star Fragment",
+  "item.medievalprogression.half_star": "Half Nether Star",
+  "item.medievalprogression.enderite_nugget": "Enderite Nugget",
+  "item.medievalprogression.rosegold_spear": "Rose Gold Spear",
+  "item.medievalprogression.rosegold_sword": "Rose Gold Sword",
+  "item.medievalprogression.rosegold_pickaxe": "Rose Gold Pickaxe",
+  "item.medievalprogression.rosegold_axe": "Rose Gold Axe",
+  "item.medievalprogression.rosegold_shovel": "Rose Gold Shovel",
+  "item.medievalprogression.rosegold_hoe": "Rose Gold Hoe",
+
+  "item.medievalprogression.rosegold_helmet": "Rose Gold Helmet",
+  "item.medievalprogression.rosegold_chestplate": "Rose Gold Chestplate",
+  "item.medievalprogression.rosegold_leggings": "Rose Gold Leggings",
+  "item.medievalprogression.rosegold_boots": "Rose Gold Boots",
+  
+  "item.medievalprogression.rosegold_horse_armor": "Rose Gold Horse Armor",
+  "item.medievalprogression.rosegold_nautilus_armor": "Rose Gold Nautilus Armor",
+  
+  
+  "key.medievalprogression.open_map": "Open Map",
+  "key.categories.medievalprogression.controls": "Medieval Progression"
+}
