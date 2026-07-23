@@ -5,6 +5,9 @@ import com.thebroman10.medievalprogression.item.ModCreativeTabs;
 import com.thebroman10.medievalprogression.item.ModItems;
 import com.thebroman10.medievalprogression.block.ModBlocks;
 import com.thebroman10.medievalprogression.block.entity.ModBlockEntities;
+import com.thebroman10.medievalprogression.loot.LootTablesBetterDungeons;
+import com.thebroman10.medievalprogression.loot.LootTablesMineshafts;
+import com.thebroman10.medievalprogression.loot.LootTablesRosegoldNautilusArmor;
 
 import net.fabricmc.api.ModInitializer;
 
@@ -26,6 +29,12 @@ public class MedievalProgression implements ModInitializer {
         ModMenuTypes.initialize();
         
         ModCreativeTabs.register();
+
+        LootTablesBetterDungeons.register();
+        
+        LootTablesMineshafts.register();
+
+        LootTablesRosegoldNautilusArmor.register();
 
         System.out.println("Medieval Progression loaded!");
 
