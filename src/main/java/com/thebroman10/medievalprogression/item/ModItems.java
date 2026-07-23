@@ -224,7 +224,7 @@ public class ModItems {
             "rosegold_sword",
             Item::new,
             new Item.Properties()
-                    .sword(ToolMaterial.DIAMOND, 3.0f, -2.4f)
+                    .sword(ROSEGOLD_TOOL, 3.0f, -2.4f)
     );
 
 
