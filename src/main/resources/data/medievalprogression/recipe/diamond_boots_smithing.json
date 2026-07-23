@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:diamond",
+  "base": "medievalprogression:rosegold_boots",
+  "result": {
+    "id": "minecraft:diamond_boots"
+  },
+  "template": "medievalprogression:diamond_upgrade_template"
+}

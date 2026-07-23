@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "netherite_ingot",
+  "ingredients": [
+    "medievalprogression:netherite_nugget",
+    "medievalprogression:netherite_nugget",
+    "medievalprogression:netherite_nugget",
+    "medievalprogression:netherite_nugget",
+    "medievalprogression:netherite_nugget",
+    "medievalprogression:netherite_nugget",
+    "medievalprogression:netherite_nugget",
+    "medievalprogression:netherite_nugget",
+    "medievalprogression:netherite_nugget"
+  ],
+  "result": {
+    "id": "minecraft:netherite_ingot"
+  }
+}

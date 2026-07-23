@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": "medievalprogression:diamond_upgrade_template",
+  "base": "medievalprogression:rosegold_chestplate",
+  "addition": "minecraft:diamond",
+  "result": {
+    "id": "minecraft:diamond_chestplate"
+  }
+}

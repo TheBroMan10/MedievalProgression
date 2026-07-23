@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "medievalprogression:half_star",
+  "base": "medievalprogression:half_star",
+  "result": {
+    "id": "minecraft:nether_star"
+  },
+  "template": "minecraft:blaze_powder"
+}

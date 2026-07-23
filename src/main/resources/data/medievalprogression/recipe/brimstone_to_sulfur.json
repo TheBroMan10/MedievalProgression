@@ -1,0 +1,11 @@
+{
+  "replace":true,
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "biomesoplenty:brimstone_bud"
+  ],
+  "result": {
+    "id": "lighterend:sulphur_crystalline"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:diamond",
+  "base": "medievalprogression:rosegold_axe",
+  "result": {
+    "id": "minecraft:diamond_axe"
+  },
+  "template": "medievalprogression:diamond_upgrade_template"
+}

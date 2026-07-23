@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "enderite_ingot",
+  "ingredients": [
+    "medievalprogression:enderite_nugget",
+    "medievalprogression:enderite_nugget",
+    "medievalprogression:enderite_nugget",
+    "medievalprogression:enderite_nugget",
+    "medievalprogression:enderite_nugget",
+    "medievalprogression:enderite_nugget",
+    "medievalprogression:enderite_nugget",
+    "medievalprogression:enderite_nugget",
+    "medievalprogression:enderite_nugget"
+  ],
+  "result": {
+    "id": "enderitemod:enderite_ingot"
+  }
+}

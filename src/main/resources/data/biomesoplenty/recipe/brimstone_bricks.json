@@ -1,0 +1,16 @@
+{
+  "replace":true,
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "#medievalprogression:brimstone_blocks"
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 4,
+    "id": "biomesoplenty:brimstone_bricks"
+  }
+}

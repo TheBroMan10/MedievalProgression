@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:diamond",
+  "base": "medievalprogression:rosegold_hoe",
+  "result": {
+    "id": "minecraft:diamond_hoe"
+  },
+  "template": "medievalprogression:diamond_upgrade_template"
+}

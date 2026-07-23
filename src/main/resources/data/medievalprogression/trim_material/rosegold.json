@@ -1,0 +1,9 @@
+{
+  "asset_name": "rosegold",
+  "description": {
+    "color": "#B4684D",
+    "translate": "trim_material.medievalprogression.rosegold"
+  },
+  "ingredient": "medievalprogression:rosegold_ingot",
+  "item_model_index": 0.8
+}

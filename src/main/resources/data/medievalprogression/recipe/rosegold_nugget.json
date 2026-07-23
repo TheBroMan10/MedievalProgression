@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "medievalprogression:rosegold_ingot"
+  ],
+  "result": {
+    "id": "medievalprogression:rosegold_nugget",
+    "count": 9
+  }
+}

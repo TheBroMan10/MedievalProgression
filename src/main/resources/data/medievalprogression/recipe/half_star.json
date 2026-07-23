@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "medievalprogression:star_fragment",
+    "medievalprogression:star_fragment",
+    "medievalprogression:star_fragment",
+    "medievalprogression:star_fragment",
+    "medievalprogression:star_fragment",
+    "medievalprogression:star_fragment"
+  ],
+  "result": {
+    "id": "medievalprogression:half_star"
+  }
+}

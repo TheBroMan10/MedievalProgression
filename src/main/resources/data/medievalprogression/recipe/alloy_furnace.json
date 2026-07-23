@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "medievalprogression:smooth_deepslate",
+    "#": "minecraft:copper_ingot",
+    "X": "minecraft:blast_furnace"
+  },
+  "pattern": [
+    "III",
+    "IXI",
+    "###"
+  ],
+  "result": {
+    "id": "minecraft:alloy_furnace"
+  }
+}

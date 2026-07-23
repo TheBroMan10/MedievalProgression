@@ -1,0 +1,12 @@
+{
+  "replace":true,
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "#medievalprogression:brimstone_blocks"
+  ],
+  "result": {
+    "count": 4,
+    "id": "biomesoplenty:brimstone_bud"
+  }
+}

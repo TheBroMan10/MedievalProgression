@@ -1,0 +1,17 @@
+{
+  "replace":true,
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "#medievalprogression:brimstone_blocks",
+    "F": "minecraft:fire_charge"
+  },
+  "pattern": [
+    " # ",
+    "#F#",
+    "###"
+  ],
+  "result": {
+    "id": "biomesoplenty:brimstone_fumarole"
+  }
+}

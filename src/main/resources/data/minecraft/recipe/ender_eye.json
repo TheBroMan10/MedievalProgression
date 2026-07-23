@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "N": "medievalprogression:star_fragment",
+    "W": "minecraft:wind_charge",
+    "O": "minecraft:ominous_bottle",
+    "E": "minecraft:echo_shard",
+    "P": "minecraft:ender_pearl",
+    "B": "minecraft:blaze_powder",
+    "A": "minecraft:amethyst_shard",
+    "S": "minecraft:prismarine_shard"
+  },
+  "pattern": [
+    "NWO",
+    "EPB",
+    "ASA"
+  ],
+  "result": {
+    "id": "minecraft:ender_eye"
+  }
+}
