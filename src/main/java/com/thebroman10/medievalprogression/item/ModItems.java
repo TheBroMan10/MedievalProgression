@@ -23,6 +23,9 @@ import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.item.equipment.EquipmentAssets;
 
+import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.HoeItem;
+import net.minecraft.world.item.ShovelItem;
 
 public class ModItems {
 
@@ -198,26 +201,38 @@ public class ModItems {
 
     public static final Item ROSEGOLD_AXE = register(
             "rosegold_axe",
-            Item::new,
+            properties -> new AxeItem(
+                    ROSEGOLD_TOOL,
+                    5.5f,
+                    -3.0f,
+                    properties
+            ),
             new Item.Properties()
-                    .axe(ROSEGOLD_TOOL, 5.5f, -3.0f)
     );
 
 
-    public static final Item ROSEGOLD_SHOVEL = register(
-            "rosegold_shovel",
-            Item::new,
-            new Item.Properties()
-                    .shovel(ROSEGOLD_TOOL, 1.5f, -3.0f)
-    );
+        public static final Item ROSEGOLD_SHOVEL = register(
+                "rosegold_shovel",
+                properties -> new ShovelItem(
+                        ROSEGOLD_TOOL,
+                        1.5f,
+                        -3.0f,
+                        properties
+                ),
+                new Item.Properties()
+        );
 
 
-    public static final Item ROSEGOLD_HOE = register(
-            "rosegold_hoe",
-            Item::new,
-            new Item.Properties()
-                    .hoe(ROSEGOLD_TOOL, -0.5f, -1.0f)
-    );
+        public static final Item ROSEGOLD_HOE = register(
+                "rosegold_hoe",
+                properties -> new HoeItem(
+                        ROSEGOLD_TOOL,
+                        -0.5f,
+                        -1.0f,
+                        properties
+                ),
+                new Item.Properties()
+        );
 
 
     public static final Item ROSEGOLD_SWORD = register(
