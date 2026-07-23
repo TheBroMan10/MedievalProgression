@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "medievalprogression:item/rosegold_horse_armor"
+  }
+}
