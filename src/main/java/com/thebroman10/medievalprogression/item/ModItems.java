@@ -38,6 +38,15 @@ public class ModItems {
             "rosegold_ingot",
             Item::new,
             new Item.Properties()
+                    .trimMaterial(
+                            ResourceKey.create(
+                                    Registries.TRIM_MATERIAL,
+                                    Identifier.fromNamespaceAndPath(
+                                            MedievalProgression.MOD_ID,
+                                            "rosegold"
+                                    )
+                            )
+                    )
     );
 
 
