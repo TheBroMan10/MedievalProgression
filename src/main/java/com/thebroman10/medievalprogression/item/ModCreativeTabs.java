@@ -33,7 +33,7 @@ public class ModCreativeTabs {
                         .title(Component.translatable(
                                 "itemGroup.medievalprogression.medieval_tab"
                         ))
-                        .icon(() -> new ItemStack(ModItems.ROSEGOLD_SWORD))
+                        .icon(() -> new ItemStack(ModItems.ALLOY_FURNACE))
                         .displayItems((parameters, output) -> {
 
                             output.accept(ModItems.ROSEGOLD_HELMET);
