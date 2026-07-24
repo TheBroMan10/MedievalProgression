@@ -4,7 +4,7 @@ import net.minecraft.world.Container;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.FuelValues;
-
+import net.minecraft.world.item.Items;
 
 public class FuelSlot extends Slot {
 
@@ -30,9 +30,7 @@ public class FuelSlot extends Slot {
 
     @Override
     public boolean mayPlace(ItemStack stack) {
-
-        return fuelValues.isFuel(stack);
-
+        return (stack.is(Items.COAL) || stack.is(Items.CHARCOAL) || stack.is(Items.LAVA_BUCKET) || stack.is(Items.COAL_BLOCK) || stack.is(Items.BLAZE_POWDER));
     }
 
 }
