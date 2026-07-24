@@ -54,6 +54,8 @@ public class ModCreativeTabs {
                             output.accept(ModItems.ROSEGOLD_INGOT);
                             output.accept(ModItems.ROSEGOLD_NUGGET);
                             output.accept(ModItems.ROSEGOLD_BLOCK);
+
+                            output.accept(ModItems.COMPRESSED_ROSE_BLOCK);
                             
                             output.accept(ModItems.NETHERITE_NUGGET);
                             output.accept(ModItems.STAR_FRAGMENT);
@@ -64,6 +66,7 @@ public class ModCreativeTabs {
 
                             output.accept(ModItems.SMOOTH_DEEPSLATE);
                             output.accept(ModItems.DIAMOND_UPGRADE);
+                            output.accept(ModItems.ROSEGOLD_UPGRADE);
                             output.accept(ModItems.MEDIEVAL_GUIDE);
 
                         })
