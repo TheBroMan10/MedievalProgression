@@ -100,7 +100,11 @@ public class AlloyFurnaceScreen extends AbstractContainerScreen<AlloyFurnaceMenu
 
 
         // Progress arrow
-        int progress = menu.getScaledProgress(24);
+        int progress = 0;
+        
+        if (menu.isBurning()) {
+            progress = menu.getScaledProgress(24);
+        }
 
 
         graphics.blit(
@@ -114,6 +118,6 @@ public class AlloyFurnaceScreen extends AbstractContainerScreen<AlloyFurnaceMenu
                 17,
                 24,
                 17
-        );
+         );
     }
 }
