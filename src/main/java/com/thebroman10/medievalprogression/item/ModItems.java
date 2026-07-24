@@ -45,6 +45,21 @@ public class ModItems {
                     )
     );
 
+    public static final Item STEEL_INGOT = register(
+            "steel_ingot",
+            Item::new,
+            new Item.Properties()
+                    .trimMaterial(
+                            ResourceKey.create(
+                                    Registries.TRIM_MATERIAL,
+                                    Identifier.fromNamespaceAndPath(
+                                            MedievalProgression.MOD_ID,
+                                            "steel"
+                                    )
+                            )
+                    )
+    );
+
 
     public static final Item ROSEGOLD_NUGGET = register(
             "rosegold_nugget",
@@ -52,7 +67,12 @@ public class ModItems {
             new Item.Properties()
     );
 
-
+    public static final Item STEEL_NUGGET = register(
+            "steel_nugget",
+            Item::new,
+            new Item.Properties()
+    );
+    
     public static final Item NETHERITE_NUGGET = register(
             "netherite_nugget",
             Item::new,
@@ -357,6 +377,15 @@ public class ModItems {
 
     public static final Item ROSEGOLD_BLOCK = register(
             "rosegold_block",
+            properties -> new BlockItem(
+                    ModBlocks.ROSEGOLD_BLOCK,
+                    properties
+            ),
+            new Item.Properties()
+    );
+    
+    public static final Item STEEL_BLOCK = register(
+            "steel_block",
             properties -> new BlockItem(
                     ModBlocks.ROSEGOLD_BLOCK,
                     properties
