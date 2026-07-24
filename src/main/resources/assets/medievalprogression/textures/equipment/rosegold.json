@@ -1,0 +1,29 @@
+{
+  "layers": {
+    "horse_body": [
+      {
+        "texture": "medievalprogression:rosegold"
+      }
+    ],
+    "humanoid": [
+      {
+        "texture": "medievalprogression:rosegold"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "medievalprogression:rosegold"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "medievalprogression:rosegold"
+      }
+    ],
+    "nautilus_body": [
+      {
+        "texture": "medievalprogression:rosegold"
+      }
+    ]
+  }
+}

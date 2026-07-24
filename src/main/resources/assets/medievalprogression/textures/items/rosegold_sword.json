@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "medievalprogression:item/tools/rosegold_sword"
+  },
+  "components": {
+    "minecraft:weapon": {}
+  }
+}
