@@ -18,12 +18,16 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
     private final Container container;
     private final ContainerData data;
 
+
     public AlloyFurnaceMenu(
             int id,
             Inventory inventory
     ) {
+
         this(id, inventory, null);
+
     }
+
 
     public AlloyFurnaceMenu(
             int id,
@@ -36,6 +40,7 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
                 id
         );
 
+
         if (blockEntity != null) {
 
             this.container = blockEntity;
@@ -44,14 +49,19 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
         } else {
 
             this.container = new SimpleContainer(5);
-            this.data = new SimpleContainerData(2);
+
+            // burnTime, cookTime, maxBurnTime
+            this.data = new SimpleContainerData(3);
 
         }
+
 
         FuelValues fuelValues =
                 inventory.player
                         .level()
                         .fuelValues();
+
+
 
         // Input 1
         addSlot(new Slot(
@@ -61,6 +71,7 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
                 17
         ));
 
+
         // Input 2
         addSlot(new Slot(
                 container,
@@ -68,6 +79,7 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
                 56,
                 53
         ));
+
 
         // Fuel
         addSlot(new FuelSlot(
@@ -78,6 +90,7 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
                 fuelValues
         ));
 
+
         // Primary Output
         addSlot(new OutputSlot(
                 container,
@@ -86,6 +99,7 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
                 26
         ));
 
+
         // Secondary Output
         addSlot(new OutputSlot(
                 container,
@@ -93,6 +107,8 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
                 116,
                 44
         ));
+
+
 
         // Player inventory
         for (int y = 0; y < 3; y++) {
@@ -110,6 +126,8 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
 
         }
 
+
+
         // Hotbar
         for (int x = 0; x < 9; x++) {
 
@@ -122,8 +140,13 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
 
         }
 
+
+
         addDataSlots(data);
+
     }
+
+
 
     @Override
     public ItemStack quickMoveStack(
@@ -133,13 +156,17 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
 
         ItemStack stack = ItemStack.EMPTY;
 
+
         Slot slot = this.slots.get(index);
+
 
         if (slot != null && slot.hasItem()) {
 
             ItemStack original = slot.getItem();
 
             stack = original.copy();
+
+
 
             // Furnace -> Player
             if (index < 5) {
@@ -157,8 +184,11 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
 
             }
 
+
+
             // Player -> Furnace
             else {
+
 
                 // Fuel
                 if (!moveItemStackTo(
@@ -167,6 +197,7 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
                         3,
                         false
                 )) {
+
 
                     // Inputs
                     if (!moveItemStackTo(
@@ -184,31 +215,69 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
 
             }
 
+
+
             if (original.getCount() == stack.getCount()) {
+
                 return ItemStack.EMPTY;
+
             }
+
+
 
             slot.setByPlayer(original);
 
         }
 
+
         return stack;
+
     }
+
+
 
     @Override
     public boolean stillValid(Player player) {
+
         return container.stillValid(player);
+
     }
+
+
 
     public boolean isBurning() {
+
         return data.get(0) > 0;
+
     }
+
+
 
     public int getScaledBurnTime(int pixels) {
-        return data.get(0) * pixels / 1600;
+
+        int burnTime = data.get(0);
+
+        int maxBurnTime = data.get(2);
+
+
+
+        if (maxBurnTime <= 0) {
+
+            return 0;
+
+        }
+
+
+
+        return burnTime * pixels / maxBurnTime;
+
     }
 
+
+
     public int getScaledProgress(int pixels) {
+
         return data.get(1) * pixels / 200;
+
     }
 }
