@@ -26,17 +26,23 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
             NonNullList.withSize(5, ItemStack.EMPTY);
 
     private int burnTime;
+    private int maxBurnTime;
     private int cookTime;
 
     private static final int MAX_COOK_TIME = 200;
 
-    public AlloyFurnaceBlockEntity(BlockPos pos, BlockState state) {
+
+    public AlloyFurnaceBlockEntity(
+            BlockPos pos,
+            BlockState state
+    ) {
         super(
                 ModBlockEntities.ALLOY_FURNACE,
                 pos,
                 state
         );
     }
+
 
     public static void tick(
             Level level,
@@ -47,40 +53,56 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
 
         boolean dirty = false;
 
+
         if (furnace.burnTime > 0) {
+
             furnace.burnTime--;
             dirty = true;
+
         }
+
 
         if (!level.isClientSide()) {
 
             if (furnace.canProcess()) {
 
+
                 if (furnace.burnTime <= 0) {
 
                     ItemStack fuel = furnace.items.get(2);
 
+
                     if (!fuel.isEmpty()) {
 
-                        furnace.burnTime = getFuelTime(fuel);
-                        fuel.shrink(1);
-                        dirty = true;
+                        furnace.maxBurnTime =
+                                getFuelTime(fuel);
 
+                        furnace.burnTime =
+                                furnace.maxBurnTime;
+
+                        fuel.shrink(1);
+
+                        dirty = true;
                     }
                 }
+
 
                 if (furnace.burnTime > 0) {
 
                     furnace.cookTime++;
 
+
                     if (furnace.cookTime >= MAX_COOK_TIME) {
 
                         furnace.cookTime = 0;
+
                         furnace.createAlloy();
+
                         dirty = true;
 
                     }
                 }
+
 
             } else {
 
@@ -88,7 +110,9 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
 
             }
 
+
             boolean lit = furnace.burnTime > 0;
+
 
             if (state.getValue(AlloyFurnaceBlock.LIT) != lit) {
 
@@ -105,12 +129,14 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
 
             }
 
+
             if (dirty) {
+
                 furnace.setChanged();
+
             }
         }
     }
-
     private boolean canProcess() {
 
         if (items.get(0).isEmpty()
@@ -139,26 +165,15 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
                 recipe.getSecondaryResult();
 
 
-        // Primary output can go into slot 3 or overflow slot 4
-        if (!canOutput(
-                items.get(3),
-                primary
-        )
-        && !canOutput(
-                items.get(4),
-                primary
-        )) {
+        if (!canOutput(items.get(3), primary)
+                && !canOutput(items.get(4), primary)) {
 
             return false;
         }
 
 
-        // Secondary output only uses slot 4
         if (recipe.hasSecondaryResult()
-                && !canOutput(
-                        items.get(4),
-                        secondary
-                )) {
+                && !canOutput(items.get(4), secondary)) {
 
             return false;
         }
@@ -166,6 +181,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
 
         return true;
     }
+
 
     private boolean canOutput(
             ItemStack output,
@@ -189,6 +205,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
                 <= output.getMaxStackSize();
     }
 
+
     private void createAlloy() {
 
         AlloyRecipe recipe =
@@ -206,17 +223,12 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
         ItemStack primary =
                 recipe.getResult();
 
-
         ItemStack secondary =
                 recipe.getSecondaryResult();
 
 
 
-        // Primary output always happens
-        if (canOutput(
-                items.get(3),
-                primary
-        )) {
+        if (canOutput(items.get(3), primary)) {
 
             addOutput(
                     3,
@@ -234,7 +246,6 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
 
 
 
-        // Secondary output uses chance
         if (recipe.shouldCreateSecondary()) {
 
             addOutput(
@@ -248,8 +259,8 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
 
         items.get(0).shrink(1);
         items.get(1).shrink(1);
-
     }
+
 
     private void addOutput(
             int slot,
@@ -259,6 +270,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
         if (result.isEmpty()) {
             return;
         }
+
 
         if (items.get(slot).isEmpty()) {
 
@@ -276,18 +288,33 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
         }
     }
 
+
     private static int getFuelTime(ItemStack stack) {
 
         if (stack.is(Items.COAL)) {
-            return 1600;
+            return 800;
         }
 
         if (stack.is(Items.CHARCOAL)) {
-            return 1600;
+            return 800;
+        }
+
+        if (stack.is(Items.LAVA_BUCKET)) {
+            return 12800;
+        }
+
+        if (stack.is(Items.COAL_BLOCK)) {
+            return 8000;
+        }
+
+        if (stack.is(Items.BLAZE_POWDER)) {
+            return 6400;
         }
 
         return 0;
     }
+
+
     public ContainerData getData() {
 
         return new ContainerData() {
@@ -299,10 +326,12 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
 
                     case 0 -> burnTime;
                     case 1 -> cookTime;
+                    case 2 -> maxBurnTime;
 
                     default -> 0;
                 };
             }
+
 
             @Override
             public void set(
@@ -314,16 +343,19 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
 
                     case 0 -> burnTime = value;
                     case 1 -> cookTime = value;
+                    case 2 -> maxBurnTime = value;
 
                 }
             }
 
+
             @Override
             public int getCount() {
-                return 2;
+                return 3;
             }
         };
     }
+
 
     @Override
     protected void saveAdditional(
@@ -332,21 +364,31 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
 
         super.saveAdditional(output);
 
+
         ContainerHelper.saveAllItems(
                 output,
                 items
         );
+
 
         output.putInt(
                 "BurnTime",
                 burnTime
         );
 
+
+        output.putInt(
+                "MaxBurnTime",
+                maxBurnTime
+        );
+
+
         output.putInt(
                 "CookTime",
                 cookTime
         );
     }
+
 
     @Override
     protected void loadAdditional(
@@ -355,16 +397,26 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
 
         super.loadAdditional(input);
 
+
         ContainerHelper.loadAllItems(
                 input,
                 items
         );
+
 
         burnTime =
                 input.getIntOr(
                         "BurnTime",
                         0
                 );
+
+
+        maxBurnTime =
+                input.getIntOr(
+                        "MaxBurnTime",
+                        0
+                );
+
 
         cookTime =
                 input.getIntOr(
@@ -373,18 +425,22 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
                 );
     }
 
+
     public int getBurnTime() {
         return burnTime;
     }
+
 
     public int getCookTime() {
         return cookTime;
     }
 
+
     @Override
     public int getContainerSize() {
         return 5;
     }
+
 
     @Override
     public boolean isEmpty() {
@@ -394,16 +450,17 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
             if (!stack.isEmpty()) {
                 return false;
             }
-
         }
 
         return true;
     }
 
+
     @Override
     public ItemStack getItem(int slot) {
         return items.get(slot);
     }
+
 
     @Override
     public ItemStack removeItem(
@@ -418,10 +475,9 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
         );
     }
 
+
     @Override
-    public ItemStack removeItemNoUpdate(
-            int slot
-    ) {
+    public ItemStack removeItemNoUpdate(int slot) {
 
         ItemStack stack = items.get(slot);
 
@@ -432,6 +488,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
 
         return stack;
     }
+
 
     @Override
     public void setItem(
@@ -447,6 +504,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
         setChanged();
     }
 
+
     @Override
     public boolean stillValid(
             net.minecraft.world.entity.player.Player player
@@ -455,10 +513,12 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
         return true;
     }
 
+
     @Override
     public void clearContent() {
         items.clear();
     }
+
 
     @Override
     public Component getDisplayName() {
@@ -467,6 +527,7 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
                 "Alloy Furnace"
         );
     }
+
 
     @Override
     public AbstractContainerMenu createMenu(
