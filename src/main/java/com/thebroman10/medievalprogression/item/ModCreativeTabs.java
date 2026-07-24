@@ -51,6 +51,8 @@ public class ModCreativeTabs {
                             output.accept(ModItems.ROSEGOLD_SHOVEL);
                             output.accept(ModItems.ROSEGOLD_HOE);
                             
+                            output.accept(ModItems.ALLOY_FURNACE);
+                            
                             output.accept(ModItems.ROSEGOLD_INGOT);
                             output.accept(ModItems.ROSEGOLD_NUGGET);
                             output.accept(ModItems.ROSEGOLD_BLOCK);
@@ -58,19 +60,22 @@ public class ModCreativeTabs {
                             output.accept(ModItems.STEEL_INGOT);
                             output.accept(ModItems.STEEL_NUGGET);
                             output.accept(ModItems.STEEL_BLOCK);
-                            
-                            output.accept(ModItems.COMPRESSED_ROSE_BLOCK);
-                            
+
                             output.accept(ModItems.NETHERITE_NUGGET);
-                            output.accept(ModItems.STAR_FRAGMENT);
-                            output.accept(ModItems.HALF_STAR);
                             output.accept(ModItems.ENDERITE_NUGGET);
                             
-                            output.accept(ModItems.ALLOY_FURNACE);
+                            output.accept(ModItems.COKE);
+
+                            output.accept(ModItems.COMPRESSED_ROSE_BLOCK);
+
+                            output.accept(ModItems.STAR_FRAGMENT);
+                            output.accept(ModItems.HALF_STAR);
 
                             output.accept(ModItems.SMOOTH_DEEPSLATE);
+                            
                             output.accept(ModItems.DIAMOND_UPGRADE);
                             output.accept(ModItems.ROSEGOLD_UPGRADE);
+                            
                             output.accept(ModItems.MEDIEVAL_GUIDE);
 
                         })

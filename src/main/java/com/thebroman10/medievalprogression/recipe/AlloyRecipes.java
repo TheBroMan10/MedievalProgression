@@ -55,9 +55,31 @@ public class AlloyRecipes {
                     100,
                     ItemStack.EMPTY,
                     0
+            ),
+
+
+            new AlloyRecipe(
+                    new ItemStack(Items.IRON_INGOT),
+                    new ItemStack(Items.COAL),
+                    new ItemStack(ModItems.STEEL_INGOT),
+                    100,
+                    new ItemStack(ModItems.COKE),
+                    33
+            ),
+
+    
+    
+            new AlloyRecipe(
+                    new ItemStack(Items.IRON_INGOT),
+                    new ItemStack(ModItems.COKE),
+                    new ItemStack(ModItems.STEEL_INGOT, 2),
+                    100,
+                    new ItemStack(ModItems.STEEL_INGOT),
+                    33
             )
 
     );
+
 
 
     public static AlloyRecipe getRecipe(

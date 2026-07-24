@@ -66,6 +66,12 @@ public class ModItems {
             Item::new,
             new Item.Properties()
     );
+    
+    public static final Item COKE = register(
+            "coke",
+            Item::new,
+            new Item.Properties()
+    );
 
     public static final Item STEEL_NUGGET = register(
             "steel_nugget",
