@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": [
+    "medievalprogression:rosegold_pickaxe",
+    "medievalprogression:rosegold_shovel",
+    "medievalprogression:rosegold_axe",
+    "medievalprogression:rosegold_hoe",
+    "medievalprogression:rosegold_sword",
+    "medievalprogression:rosegold_spear",
+    "medievalprogression:rosegold_helmet",
+    "medievalprogression:rosegold_chestplate",
+    "medievalprogression:rosegold_leggings",
+    "medievalprogression:rosegold_boots",
+    "medievalprogression:rosegold_horse_armor",
+    "medievalprogression:rosegold_nautilus_armor"
+  ],
+  "result": {
+    "id": "medievalprogression:rosegold_nugget"
+  }
+}

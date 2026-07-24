@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": "medievalprogression:rosegold_upgrade_template",
+  "base": "minecraft:golden_hoe",
+  "addition": "medievalprogression:compressed_rose_block",
+  "result": {
+    "id": "medievalprogression:rosegold_hoe"
+  }
+}

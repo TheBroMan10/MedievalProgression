@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": "medievalprogression:rosegold_upgrade_template",
+  "base": "minecraft:golden_nautilus_armor",
+  "addition": "medievalprogression:compressed_rose_block",
+  "result": {
+    "id": "medievalprogression:rosegold_nautilus_armor"
+  }
+}
