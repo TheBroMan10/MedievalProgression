@@ -55,6 +55,10 @@ public class ModCreativeTabs {
                             output.accept(ModItems.ROSEGOLD_NUGGET);
                             output.accept(ModItems.ROSEGOLD_BLOCK);
 
+                            output.accept(ModItems.STEEL_INGOT);
+                            output.accept(ModItems.STEEL_NUGGET);
+                            output.accept(ModItems.STEEL_BLOCK);
+                            
                             output.accept(ModItems.COMPRESSED_ROSE_BLOCK);
                             
                             output.accept(ModItems.NETHERITE_NUGGET);
