@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "medievalprogression:rosegold_block"
+    "medievalprogression:rosegold_block",
+    "medievalprogression:steel_block"
   ]
 }

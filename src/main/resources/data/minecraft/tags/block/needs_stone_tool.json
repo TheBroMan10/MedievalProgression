@@ -1,5 +1,5 @@
 {
-    "replace":false
+    "replace":false,
     "values": [
         "medievalprogression:alloy_furnace",
         "medievalprogression:rosegold_block"

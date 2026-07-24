@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "medievalprogression:rosegold_ingot"
+    "medievalprogression:rosegold_ingot",
+    "medievalprogression:steel_ingot"
   ]
 }
