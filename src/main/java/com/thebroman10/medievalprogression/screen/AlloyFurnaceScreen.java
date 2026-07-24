@@ -73,27 +73,25 @@ public class AlloyFurnaceScreen extends AbstractContainerScreen<AlloyFurnaceMenu
                 256
         );
 
-
-
-
         // Flame below fuel slot
-        if(menu.isBurning()) {
+        if (menu.isBurning()) {
 
-
-            int flameHeight = menu.getScaledBurnTime(14);
-
+            int flameHeight = Math.max(
+                    1,
+                    menu.getScaledBurnTime(13)
+            );
 
             graphics.blit(
                     RenderPipelines.GUI_TEXTURED,
                     FLAME,
                     this.leftPos + 20,
-                    this.topPos + 53 + (14 - flameHeight),
+                    this.topPos + 52 + (13 - flameHeight),
                     0,
-                    14 - flameHeight,
-                    14,
+                    13 - flameHeight,
+                    13,
                     flameHeight,
-                    14,
-                    14
+                    13,
+                    13
             );
         }
 
