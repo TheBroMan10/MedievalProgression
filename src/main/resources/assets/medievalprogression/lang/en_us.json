@@ -12,11 +12,13 @@
   "item.medievalprogression.alloy_furnace": "Alloy Furnace",
   "item.medievalprogression.smooth_deepslate": "Smooth Deepslate",
  
-  "item.medievalprogression.diamond_upgrade_template": "\u00a7eDiamond Upgrade",
+  "item.medievalprogression.diamond_upgrade_template": "Diamond Upgrade",
  
   "item.medievalprogression.rosegold_block": "Rose Gold Block",
   "item.medievalprogression.rosegold_ingot": "Rose Gold Ingot",
   "item.medievalprogression.rosegold_nugget": "Rose Gold Nugget",
+
+  "item.medievalprogression.compressed_rose_block": "Compressed Rose Quartz Block",
 
   "item.medievalprogression.netherite_nugget": "Netherite Nugget",
   "item.medievalprogression.star_fragment": "Nether Star Fragment",
