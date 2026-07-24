@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:diamond",
+  "base": "medievalprogression:rosegold_nautilus_armor",
+  "result": {
+    "id": "minecraft:diamond_nautilus_armor"
+  },
+  "template": "medievalprogression:diamond_upgrade_template"
+}
