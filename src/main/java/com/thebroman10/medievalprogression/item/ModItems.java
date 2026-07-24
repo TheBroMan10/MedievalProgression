@@ -15,17 +15,10 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SmithingTemplateItem;
-import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.item.equipment.EquipmentAssets;
-
-import net.minecraft.world.item.AxeItem;
-import net.minecraft.world.item.HoeItem;
-import net.minecraft.world.item.ShovelItem;
 
 public class ModItems {
 
@@ -117,6 +110,42 @@ public class ModItems {
                     properties
             ),
             new Item.Properties()
+                    .rarity(Rarity.UNCOMMON)
+
+    );
+
+    public static final Item ROSEGOLD_UPGRADE = register(
+            "rosegold_upgrade_template",
+            properties -> new SmithingTemplateItem(
+                    Component.translatable(
+                            "item.medievalprogression.rosegold_upgrade.applies_to"
+                    ),
+                    Component.translatable(
+                            "item.medievalprogression.rosegold_upgrade.ingredients"
+                    ),
+                    Component.translatable(
+                            "item.medievalprogression.rosegold_upgrade.base_slot_description"
+                    ),
+                    Component.translatable(
+                            "item.medievalprogression.rosegold_upgrade.additions_slot_description"
+                    ),
+                    List.of(
+                            Identifier.fromNamespaceAndPath(
+                                    "minecraft",
+                                    "container/slot/helmet"
+                            )
+                    ),
+                    List.of(
+                            Identifier.fromNamespaceAndPath(
+                                    "minecraft",
+                                    "container/slot/ingot"
+                            )
+                    ),
+                    properties
+            ),
+            new Item.Properties()
+                    .rarity(Rarity.UNCOMMON)
+
     );
 
 
@@ -334,6 +363,17 @@ public class ModItems {
             ),
             new Item.Properties()
     );
+
+    public static final Item COMPRESSED_ROSE_BLOCK = register(
+            "compressed_rose_block",
+            properties -> new BlockItem(
+                    ModBlocks.COMPRESSED_ROSE_BLOCK,
+                    properties
+            ),
+            new Item.Properties()
+    );
+
+
 
 
     public static final Item SMOOTH_DEEPSLATE = register(
