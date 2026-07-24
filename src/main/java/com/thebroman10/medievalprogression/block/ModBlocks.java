@@ -19,6 +19,12 @@ public class ModBlocks {
             Block::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.GOLD_BLOCK)
     );
+
+    public static final Block STEEL_BLOCK = register(
+            "steel_block",
+            Block::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)
+    );
     
     public static final Block SMOOTH_DEEPSLATE = register(
             "smooth_deepslate",
