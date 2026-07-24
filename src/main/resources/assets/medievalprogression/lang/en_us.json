@@ -5,6 +5,12 @@
   "item.medievalprogression.diamond_upgrade.base_slot_description": "Add rosegold armor, weapon, or tool",
   "item.medievalprogression.diamond_upgrade.additions_slot_description": "Add Diamond",
   
+  "item.medievalprogression.rosegold_upgrade": "Rose Gold Upgrade Template",
+  "item.medievalprogression.rosegold_upgrade.applies_to": "Golden Equipment",
+  "item.medievalprogression.rosegold_upgrade.ingredients": "Gold Ingot",
+  "item.medievalprogression.rosegold_upgrade.base_slot_description": "Add gold armor, weapon, or tool",
+  "item.medievalprogression.rosegold_upgrade.additions_slot_description": "Add Compressed Rose Quartz",
+  
   "trim_material.medievalprogression.rosegold": "Add Rosegold Ingot",
 
   "itemGroup.medievalprogression.medieval_tab": "Medieval Progression",
@@ -13,11 +19,18 @@
   "item.medievalprogression.smooth_deepslate": "Smooth Deepslate",
  
   "item.medievalprogression.diamond_upgrade_template": "Diamond Upgrade",
+  "item.medievalprogression.rosegold_upgrade_template": "Rose Gold Upgrade", 
  
   "item.medievalprogression.rosegold_block": "Rose Gold Block",
   "item.medievalprogression.rosegold_ingot": "Rose Gold Ingot",
   "item.medievalprogression.rosegold_nugget": "Rose Gold Nugget",
+  
+  "item.medievalprogression.steel_block": "Steel Block",
+  "item.medievalprogression.steel_ingot": "Steel Ingot",
+  "item.medievalprogression.steel_nugget": "Steel Nugget",
 
+  "item.medievalprogression.coke": "Carbon Coke",
+  
   "item.medievalprogression.compressed_rose_block": "Compressed Rose Quartz Block",
 
   "item.medievalprogression.netherite_nugget": "Netherite Nugget",
