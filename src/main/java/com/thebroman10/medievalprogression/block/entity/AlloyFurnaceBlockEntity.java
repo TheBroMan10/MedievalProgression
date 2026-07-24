@@ -5,6 +5,8 @@ import com.thebroman10.medievalprogression.recipe.AlloyRecipe;
 import com.thebroman10.medievalprogression.recipe.AlloyRecipes;
 import com.thebroman10.medievalprogression.screen.AlloyFurnaceMenu;
 
+import net.minecraft.core.Direction;
+import net.minecraft.world.WorldlyContainer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
@@ -20,7 +22,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, MenuProvider {
+public class AlloyFurnaceBlockEntity extends BlockEntity implements WorldlyContainer, MenuProvider {
 
     private final NonNullList<ItemStack> items =
             NonNullList.withSize(5, ItemStack.EMPTY);
@@ -31,6 +33,19 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
 
     private static final int MAX_COOK_TIME = 200;
 
+    private static final int[] INPUT_SLOTS = {
+            0,
+            1
+    };
+
+    private static final int[] FUEL_SLOT = {
+            2
+    };
+
+    private static final int[] OUTPUT_SLOTS = {
+            3,
+            4
+    };
 
     public AlloyFurnaceBlockEntity(
             BlockPos pos,
@@ -540,5 +555,66 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
                 inventory,
                 this
         );
+    }
+    
+    
+    @Override
+    public int[] getSlotsForFace(Direction side) {
+
+        if (side == Direction.DOWN) {
+
+            return OUTPUT_SLOTS;
+
+        }
+
+        if (side == Direction.UP) {
+
+            return FUEL_SLOT;
+
+        }
+
+        return INPUT_SLOTS;
+    }
+
+
+    @Override
+    public boolean canPlaceItemThroughFace(
+            int slot,
+            ItemStack stack,
+            Direction side
+    ) {
+
+        // Top = fuel
+        if (side == Direction.UP) {
+
+            return slot == 2
+                    && getFuelTime(stack) > 0;
+
+        }
+
+
+        // Sides = inputs
+        if (side != Direction.DOWN) {
+
+            return slot == 0
+                    || slot == 1;
+
+        }
+
+
+        // Bottom cannot insert
+        return false;
+    }
+
+
+    @Override
+    public boolean canTakeItemThroughFace(
+            int slot,
+            ItemStack stack,
+            Direction side
+    ) {
+
+        return side == Direction.DOWN
+                && (slot == 3 || slot == 4);
     }
 }
