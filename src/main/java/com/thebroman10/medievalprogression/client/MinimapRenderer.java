@@ -47,8 +47,15 @@ public class MinimapRenderer {
                 Minecraft.getInstance();
 
 
-        if (minecraft.player == null)
+        if (minecraft.player == null) {
             return;
+        }
+
+
+        // Hide minimap while F3 debug screen is open
+        if (minecraft.getDebugOverlay().showDebugScreen()) {
+            return;
+        }
 
 
 
@@ -87,8 +94,6 @@ public class MinimapRenderer {
         int y = 10;
 
 
-
-        // Black background outside map
 
         graphics.fill(
                 x,
@@ -211,8 +216,6 @@ public class MinimapRenderer {
 
 
 
-        // Player marker
-
         int markerSize =
                 12;
 
@@ -253,8 +256,6 @@ public class MinimapRenderer {
         graphics.pose().popMatrix();
 
 
-
-        // PNG border overlay
 
         if (config.minimapBorder) {
 
