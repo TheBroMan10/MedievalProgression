@@ -33,6 +33,12 @@ public class ModBlocks {
             BlockBehaviour.Properties.ofFullCopy(Blocks.BLAST_FURNACE)
     );
 
+    public static final Block COMPRESSED_ROSE_BLOCK = register(
+            "compressed_rose_block",
+            Block::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_BLOCK)
+    );
+
 
     private static Block register(
             String name,
