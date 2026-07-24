@@ -91,16 +91,15 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements Container, M
 
                     furnace.cookTime++;
 
-
                     if (furnace.cookTime >= MAX_COOK_TIME) {
-
                         furnace.cookTime = 0;
-
                         furnace.createAlloy();
-
                         dirty = true;
-
                     }
+
+                } else {
+
+                    furnace.cookTime = 0;
                 }
 
 
