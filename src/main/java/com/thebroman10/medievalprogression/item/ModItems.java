@@ -393,7 +393,7 @@ public class ModItems {
     public static final Item STEEL_BLOCK = register(
             "steel_block",
             properties -> new BlockItem(
-                    ModBlocks.ROSEGOLD_BLOCK,
+                    ModBlocks.STEEL_BLOCK,
                     properties
             ),
             new Item.Properties()
