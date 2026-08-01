@@ -50,7 +50,7 @@ public class GuideBookScreen extends Screen {
     private int page = 0;
 
 
-    private static final int MAX_PAGE = 4;
+    private static final int MAX_PAGE = 1;
 
 
     private static final int BOOK_WIDTH = 256;
