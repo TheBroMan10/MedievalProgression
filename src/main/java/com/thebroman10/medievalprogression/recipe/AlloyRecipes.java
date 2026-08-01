@@ -46,6 +46,14 @@ public class AlloyRecipes {
                     33
             ),
 
+            new AlloyRecipe(
+                    new ItemStack(Items.GOLD_INGOT),
+                    new ItemStack(Items.NETHERITE_SCRAP),
+                    new ItemStack(ModItems.NETHERITE_NUGGET, 2),
+                    100,
+                    new ItemStack(ModItems.NETHERITE_NUGGET),
+                    33
+            ),
 
             // Biomes O' Plenty Rose Quartz -> Rose Gold
             new AlloyRecipe(
@@ -67,7 +75,14 @@ public class AlloyRecipes {
                     33
             ),
 
-    
+            new AlloyRecipe(
+                    new ItemStack(Items.COAL),
+                    new ItemStack(Items.COAL),
+                    new ItemStack(ModItems.COKE, 2),
+                    100,
+                    new ItemStack(ModItems.COKE),
+                    33
+            ),
     
             new AlloyRecipe(
                     new ItemStack(Items.IRON_INGOT),
