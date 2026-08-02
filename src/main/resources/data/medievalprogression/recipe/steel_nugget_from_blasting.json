@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": [
+    "minecraft:iron_helmet",
+    "minecraft:iron_chestplate",
+    "minecraft:iron_leggings",
+    "minecraft:iron_boots",
+    "minecraft:iron_horse_armor",
+    "minecraft:iron_nautilus_armor"
+  ],
+  "result": {
+    "id": "medievalprogression:steel_nugget"
+  }
+}
