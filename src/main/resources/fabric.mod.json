@@ -1,13 +1,12 @@
 {
   "schemaVersion": 1,
   "id": "medievalprogression",
-  "version": "1.2+C",
+  "version": "1.0+C",
   "name": "MedievalProgression",
   "description": "Medieval progression",
   "authors": [
     "TheBroMan10",
-    "Krysgann1",
-    "Renit"
+    "Krysgann1"
   ],
   "contact": {},
   "license": "MIT",
