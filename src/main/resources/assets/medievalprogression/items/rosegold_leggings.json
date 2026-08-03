@@ -82,14 +82,14 @@
       {
         "model": {
           "type": "minecraft:model",
-          "model": "medievalprogression:item/armor/head/rosegold/rosegold_leggings_rosegold_trim"
+          "model": "medievalprogression:item/armor/leg/rosegold/rosegold_leggings_rosegold_trim"
         },
         "when": "medievalprogression:rosegold"
       },
       {
         "model": {
           "type": "minecraft:model",
-          "model": "medievalprogression:item/armor/head/rosegold/rosegold_leggings_steel_trim"
+          "model": "medievalprogression:item/armor/leg/rosegold/rosegold_leggings_steel_trim"
         },
         "when": "medievalprogression:steel"
       }
