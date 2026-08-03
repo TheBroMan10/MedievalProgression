@@ -89,7 +89,7 @@
       {
         "model": {
           "type": "minecraft:model",
-          "model": "medievalprogression:item/armor/head/rosegold/rosegold_chestplate_steel_trim"
+          "model": "medievalprogression:item/armor/chest/rosegold/rosegold_chestplate_steel_trim"
         },
         "when": "medievalprogression:steel"
       }
