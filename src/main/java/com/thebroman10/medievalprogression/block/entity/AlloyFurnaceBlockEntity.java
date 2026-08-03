@@ -129,13 +129,12 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements WorldlyConta
                 furnace.cookTime = 0;
 
             }
-
-
+            
             boolean lit = furnace.burnTime > 0;
-
-
+            
+            
             if (state.getValue(AlloyFurnaceBlock.LIT) != lit) {
-
+            
                 level.setBlock(
                         pos,
                         state.setValue(
@@ -144,9 +143,32 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements WorldlyConta
                         ),
                         3
                 );
+            
+            
+                if (lit) {
+            
+                    level.playSound(
+                            null,
+                            pos,
+                            net.minecraft.sounds.SoundEvents.FURNACE_FIRE_CRACKLE,
+                            net.minecraft.sounds.SoundSource.BLOCKS,
+                            1.0f,
+                            1.0f
+                    );
 
+                    level.playSound(
+                            null,
+                            pos,
+                            net.minecraft.sounds.SoundEvents.LAVA_AMBIENT,
+                            net.minecraft.sounds.SoundSource.BLOCKS,
+                            0.6f,
+                            1.0f
+                    );
+                }
+            
+            
                 dirty = true;
-
+            
             }
 
 
