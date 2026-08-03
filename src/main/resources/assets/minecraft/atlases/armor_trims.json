@@ -21,7 +21,8 @@
         "redstone": "minecraft:trims/color_palettes/redstone",
         "resin": "minecraft:trims/color_palettes/resin",
         "rosegold": "minecraft:trims/color_palettes/rosegold",
-        "iron_darker": "minecraft:trims/color_palettes/steel"
+        "iron_darker": "minecraft:trims/color_palettes/iron_darker",
+        "steel": "minecraft:trims/color_palettes/iron_darker"
       },
       "textures": [
         "minecraft:trims/entity/humanoid/sentry",
