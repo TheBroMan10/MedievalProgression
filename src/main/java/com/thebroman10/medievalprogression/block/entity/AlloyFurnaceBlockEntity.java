@@ -31,8 +31,6 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements WorldlyConta
     private int maxBurnTime;
     private int cookTime;
 
-    private static final int MAX_COOK_TIME = 200;
-
     private static final int[] INPUT_SLOTS = {
             0,
             1
@@ -106,7 +104,15 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements WorldlyConta
 
                     furnace.cookTime++;
 
-                    if (furnace.cookTime >= MAX_COOK_TIME) {
+                    AlloyRecipe recipe =
+                            AlloyRecipes.getRecipe(
+                                    furnace.items.get(0),
+                                    furnace.items.get(1)
+                            );
+
+                    if (recipe != null
+                            && furnace.cookTime >= recipe.getCookTime()) {
+
                         furnace.cookTime = 0;
                         furnace.createAlloy();
                         dirty = true;
