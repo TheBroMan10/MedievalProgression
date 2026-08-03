@@ -66,6 +66,28 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements WorldlyConta
 
         boolean dirty = false;
 
+        // Burning sounds
+        if (furnace.burnTime > 0
+                && level.getRandom().nextInt(200) == 0) {
+
+            level.playSound(
+                    null,
+                    pos,
+                    net.minecraft.sounds.SoundEvents.BLASTFURNACE_FIRE_CRACKLE,
+                    net.minecraft.sounds.SoundSource.BLOCKS,
+                    1.0f,
+                    1.0f
+            );
+
+            level.playSound(
+                    null,
+                    pos,
+                    net.minecraft.sounds.SoundEvents.LAVA_AMBIENT,
+                    net.minecraft.sounds.SoundSource.BLOCKS,
+                    0.6f,
+                    1.0f
+            );
+        }
 
         if (furnace.burnTime > 0) {
 
@@ -143,31 +165,6 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements WorldlyConta
                         ),
                         3
                 );
-            
-            
-                // Burning sounds
-                if (furnace.burnTime > 0
-                        && level.random.nextInt(20) == 0) {
-                
-                    level.playSound(
-                            null,
-                            pos,
-                            net.minecraft.sounds.SoundEvents.BLASTFURNACE_FIRE_CRACKLE,
-                            net.minecraft.sounds.SoundSource.BLOCKS,
-                            1.0f,
-                            1.0f
-                    );
-                
-                    level.playSound(
-                            null,
-                            pos,
-                            net.minecraft.sounds.SoundEvents.LAVA_AMBIENT,
-                            net.minecraft.sounds.SoundSource.BLOCKS,
-                            0.6f,
-                            1.0f
-                    );
-                }
-            
             
                 dirty = true;
             
