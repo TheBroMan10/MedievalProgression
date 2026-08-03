@@ -78,6 +78,20 @@
           "model": "medievalprogression:item/armor/head/rosegold/rosegold_helmet_resin_trim"
         },
         "when": "minecraft:resin"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "medievalprogression:item/armor/head/rosegold/rosegold_helmet_rosegold_trim"
+        },
+        "when": "medievalprogression:rosegold"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "medievalprogression:item/armor/head/rosegold/rosegold_helmet_steel_trim"
+        },
+        "when": "medievalprogression:steel"
       }
     ],
     "fallback": {

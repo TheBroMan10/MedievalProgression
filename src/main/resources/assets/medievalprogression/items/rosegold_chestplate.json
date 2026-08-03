@@ -85,6 +85,13 @@
           "model": "medievalprogression:item/armor/chest/rosegold/rosegold_chestplate_rosegold_trim"
       },
       "when": "medievalprogression:rosegold"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "medievalprogression:item/armor/head/rosegold/rosegold_chestplate_steel_trim"
+        },
+        "when": "medievalprogression:steel"
       }
     ],
     "fallback": {

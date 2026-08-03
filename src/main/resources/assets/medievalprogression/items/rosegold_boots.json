@@ -78,6 +78,20 @@
           "model": "medievalprogression:item/armor/foot/rosegold/rosegold_boots_resin_trim"
         },
         "when": "minecraft:resin"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "medievalprogression:item/armor/head/rosegold/rosegold_boots_rosegold_trim"
+        },
+        "when": "medievalprogression:rosegold"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "medievalprogression:item/armor/head/rosegold/rosegold_boots_steel_trim"
+        },
+        "when": "medievalprogression:steel"
       }
     ],
     "fallback": {
