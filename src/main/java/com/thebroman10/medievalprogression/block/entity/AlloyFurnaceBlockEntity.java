@@ -145,17 +145,19 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements WorldlyConta
                 );
             
             
-                if (lit) {
-            
+                // Burning sounds
+                if (furnace.burnTime > 0
+                        && level.random.nextInt(20) == 0) {
+                
                     level.playSound(
                             null,
                             pos,
-                            net.minecraft.sounds.SoundEvents.FURNACE_FIRE_CRACKLE,
+                            net.minecraft.sounds.SoundEvents.BLASTFURNACE_FIRE_CRACKLE,
                             net.minecraft.sounds.SoundSource.BLOCKS,
                             1.0f,
                             1.0f
                     );
-
+                
                     level.playSound(
                             null,
                             pos,
