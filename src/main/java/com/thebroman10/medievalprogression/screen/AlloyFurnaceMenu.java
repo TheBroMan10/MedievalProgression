@@ -1,6 +1,8 @@
 package com.thebroman10.medievalprogression.screen;
 
 import com.thebroman10.medievalprogression.block.entity.AlloyFurnaceBlockEntity;
+import com.thebroman10.medievalprogression.recipe.AlloyRecipe;
+import com.thebroman10.medievalprogression.recipe.AlloyRecipes;
 
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
@@ -49,8 +51,6 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
         } else {
 
             this.container = new SimpleContainer(5);
-
-            // burnTime, cookTime, maxBurnTime
             this.data = new SimpleContainerData(3);
 
         }
@@ -123,7 +123,6 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
                 ));
 
             }
-
         }
 
 
@@ -141,7 +140,6 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
         }
 
 
-
         addDataSlots(data);
 
     }
@@ -156,7 +154,6 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
 
         ItemStack stack = ItemStack.EMPTY;
 
-
         Slot slot = this.slots.get(index);
 
 
@@ -167,8 +164,6 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
             stack = original.copy();
 
 
-
-            // Furnace -> Player
             if (index < 5) {
 
                 if (!moveItemStackTo(
@@ -182,15 +177,8 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
 
                 }
 
-            }
+            } else {
 
-
-
-            // Player -> Furnace
-            else {
-
-
-                // Fuel
                 if (!moveItemStackTo(
                         original,
                         2,
@@ -199,7 +187,6 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
                 )) {
 
 
-                    // Inputs
                     if (!moveItemStackTo(
                             original,
                             0,
@@ -216,13 +203,11 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
             }
 
 
-
             if (original.getCount() == stack.getCount()) {
 
                 return ItemStack.EMPTY;
 
             }
-
 
 
             slot.setByPlayer(original);
@@ -256,9 +241,7 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
     public int getScaledBurnTime(int pixels) {
 
         int burnTime = data.get(0);
-
         int maxBurnTime = data.get(2);
-
 
 
         if (maxBurnTime <= 0) {
@@ -268,8 +251,7 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
         }
 
 
-
-        return burnTime * pixels / maxBurnTime;
+        return (burnTime * pixels) / maxBurnTime;
 
     }
 
@@ -277,7 +259,22 @@ public class AlloyFurnaceMenu extends AbstractContainerMenu {
 
     public int getScaledProgress(int pixels) {
 
-        return data.get(1) * pixels / 200;
+        AlloyRecipe recipe =
+                AlloyRecipes.getRecipe(
+                        container.getItem(0),
+                        container.getItem(1)
+                );
+
+
+        if (recipe == null) {
+
+            return 0;
+
+        }
+
+
+        return data.get(1) * pixels / recipe.getCookTime();
 
     }
+
 }

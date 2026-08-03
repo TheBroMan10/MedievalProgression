@@ -31,8 +31,6 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements WorldlyConta
     private int maxBurnTime;
     private int cookTime;
 
-    private static final int MAX_COOK_TIME = 200;
-
     private static final int[] INPUT_SLOTS = {
             0,
             1
@@ -68,6 +66,28 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements WorldlyConta
 
         boolean dirty = false;
 
+        // Burning sounds
+        if (furnace.burnTime > 0
+                && level.getRandom().nextInt(200) == 0) {
+
+            level.playSound(
+                    null,
+                    pos,
+                    net.minecraft.sounds.SoundEvents.BLASTFURNACE_FIRE_CRACKLE,
+                    net.minecraft.sounds.SoundSource.BLOCKS,
+                    1.0f,
+                    1.0f
+            );
+
+            level.playSound(
+                    null,
+                    pos,
+                    net.minecraft.sounds.SoundEvents.LAVA_AMBIENT,
+                    net.minecraft.sounds.SoundSource.BLOCKS,
+                    0.6f,
+                    1.0f
+            );
+        }
 
         if (furnace.burnTime > 0) {
 
@@ -106,7 +126,15 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements WorldlyConta
 
                     furnace.cookTime++;
 
-                    if (furnace.cookTime >= MAX_COOK_TIME) {
+                    AlloyRecipe recipe =
+                            AlloyRecipes.getRecipe(
+                                    furnace.items.get(0),
+                                    furnace.items.get(1)
+                            );
+
+                    if (recipe != null
+                            && furnace.cookTime >= recipe.getCookTime()) {
+
                         furnace.cookTime = 0;
                         furnace.createAlloy();
                         dirty = true;
@@ -123,13 +151,12 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements WorldlyConta
                 furnace.cookTime = 0;
 
             }
-
-
+            
             boolean lit = furnace.burnTime > 0;
-
-
+            
+            
             if (state.getValue(AlloyFurnaceBlock.LIT) != lit) {
-
+            
                 level.setBlock(
                         pos,
                         state.setValue(
@@ -138,9 +165,9 @@ public class AlloyFurnaceBlockEntity extends BlockEntity implements WorldlyConta
                         ),
                         3
                 );
-
+            
                 dirty = true;
-
+            
             }
 
 

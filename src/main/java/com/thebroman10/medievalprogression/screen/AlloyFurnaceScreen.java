@@ -49,7 +49,7 @@ public class AlloyFurnaceScreen extends AbstractContainerScreen<AlloyFurnaceMenu
 
 
 
-
+    
     @Override
     public void extractBackground(
             GuiGraphicsExtractor graphics,
@@ -57,8 +57,16 @@ public class AlloyFurnaceScreen extends AbstractContainerScreen<AlloyFurnaceMenu
             int mouseY,
             float partialTick
     ) {
-
-
+    
+        // Draw vanilla darkened background
+        super.extractBackground(
+                graphics,
+                mouseX,
+                mouseY,
+                partialTick
+        );
+    
+    
         // Main GUI
         graphics.blit(
                 RenderPipelines.GUI_TEXTURED,
@@ -72,15 +80,16 @@ public class AlloyFurnaceScreen extends AbstractContainerScreen<AlloyFurnaceMenu
                 256,
                 256
         );
-
+    
+    
         // Flame below fuel slot
         if (menu.isBurning()) {
-
+    
             int flameHeight = Math.max(
                     1,
                     menu.getScaledBurnTime(13)
             );
-
+    
             graphics.blit(
                     RenderPipelines.GUI_TEXTURED,
                     FLAME,
@@ -94,19 +103,16 @@ public class AlloyFurnaceScreen extends AbstractContainerScreen<AlloyFurnaceMenu
                     13
             );
         }
-
-
-
-
-
+    
+    
         // Progress arrow
         int progress = 0;
-        
+    
         if (menu.isBurning()) {
             progress = menu.getScaledProgress(24);
         }
-
-
+    
+    
         graphics.blit(
                 RenderPipelines.GUI_TEXTURED,
                 ARROW,
@@ -118,6 +124,6 @@ public class AlloyFurnaceScreen extends AbstractContainerScreen<AlloyFurnaceMenu
                 17,
                 24,
                 17
-         );
+        );
     }
 }

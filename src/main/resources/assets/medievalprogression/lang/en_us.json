@@ -11,7 +11,8 @@
   "item.medievalprogression.rosegold_upgrade.base_slot_description": "Add gold armor, weapon, or tool",
   "item.medievalprogression.rosegold_upgrade.additions_slot_description": "Add Compressed Rose Quartz",
   
-  "trim_material.medievalprogression.rosegold": "Add Rosegold Ingot",
+  "trim_material.medievalprogression.rosegold": "Rosegold Ingot",
+  "trim_material.medievalprogression.steel": "Steel Ingot",
 
   "itemGroup.medievalprogression.medieval_tab": "Medieval Progression",
 

@@ -43,7 +43,8 @@ public class AlloyRecipes {
                     new ItemStack(ModItems.ENDERITE_NUGGET, 2),
                     100,
                     new ItemStack(ModItems.ENDERITE_NUGGET),
-                    33
+                    33,
+                    1200
             ),
 
             new AlloyRecipe(
@@ -52,7 +53,8 @@ public class AlloyRecipes {
                     new ItemStack(ModItems.NETHERITE_NUGGET, 2),
                     100,
                     new ItemStack(ModItems.NETHERITE_NUGGET),
-                    33
+                    33,
+                    600
             ),
 
             // Biomes O' Plenty Rose Quartz -> Rose Gold
@@ -62,7 +64,8 @@ public class AlloyRecipes {
                     new ItemStack(ModItems.ROSEGOLD_INGOT, 2),
                     100,
                     ItemStack.EMPTY,
-                    0
+                    0,
+                    200
             ),
 
 
@@ -72,7 +75,8 @@ public class AlloyRecipes {
                     new ItemStack(ModItems.STEEL_INGOT),
                     100,
                     new ItemStack(ModItems.COKE),
-                    33
+                    33,
+                    300
             ),
 
             new AlloyRecipe(
@@ -81,7 +85,8 @@ public class AlloyRecipes {
                     new ItemStack(ModItems.COKE, 2),
                     100,
                     new ItemStack(ModItems.COKE),
-                    33
+                    33,
+                    500
             ),
     
             new AlloyRecipe(
@@ -90,7 +95,8 @@ public class AlloyRecipes {
                     new ItemStack(ModItems.STEEL_INGOT, 2),
                     100,
                     new ItemStack(ModItems.STEEL_INGOT),
-                    33
+                    33,
+                    200
             )
 
     );

@@ -1,7 +1,7 @@
 {
   "asset_name": "steel",
   "description": {
-    "color": "#B4684D",
+    "color": "#747474",
     "translate": "trim_material.medievalprogression.steel"
   },
   "ingredient": "medievalprogression:steel_ingot",
