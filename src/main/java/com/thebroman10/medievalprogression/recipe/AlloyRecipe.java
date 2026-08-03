@@ -13,6 +13,7 @@ public class AlloyRecipe {
     private final ItemStack secondaryResult;
     private final int secondaryChance;
 
+    private final int cookTime;
 
 
     public AlloyRecipe(
@@ -21,7 +22,8 @@ public class AlloyRecipe {
             ItemStack result,
             int resultChance,
             ItemStack secondaryResult,
-            int secondaryChance
+            int secondaryChance,
+            int cookTime
     ) {
 
         this.input1 = input1;
@@ -33,6 +35,7 @@ public class AlloyRecipe {
         this.secondaryResult = secondaryResult;
         this.secondaryChance = secondaryChance;
 
+        this.cookTime = cookTime;
     }
 
 
@@ -56,54 +59,43 @@ public class AlloyRecipe {
 
 
     public ItemStack getResult() {
-
         return result.copy();
-
     }
 
 
     public ItemStack getSecondaryResult() {
-
         return secondaryResult.copy();
-
     }
 
 
     public boolean hasSecondaryResult() {
-
         return !secondaryResult.isEmpty();
-
     }
 
 
     public boolean shouldGivePrimary() {
-
         return Math.random() * 100 < resultChance;
-
     }
 
 
     public boolean shouldGiveSecondary() {
-
         return hasSecondaryResult()
                 && Math.random() * 100 < secondaryChance;
-
     }
 
 
-    // Used by AlloyFurnaceBlockEntity
     public boolean shouldCreatePrimary() {
-
         return shouldGivePrimary();
-
     }
 
 
-    // Used by AlloyFurnaceBlockEntity
     public boolean shouldCreateSecondary() {
-
         return shouldGiveSecondary();
+    }
 
+
+    public int getCookTime() {
+        return cookTime;
     }
 
 }
