@@ -157,6 +157,19 @@
           ]
         },
         "when": "medievalprogression:rosegold"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/leather_chestplate_steel_trim",
+          "tints": [
+            {
+              "type": "minecraft:dye",
+              "default": -6265536
+            }
+          ]
+        },
+        "when": "medievalprogression:steel"
       }
     ],
     "fallback": {

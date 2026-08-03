@@ -87,6 +87,14 @@
         },
         "when": "medievalprogression:rosegold"
       }
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/iron_chestplate_steel_trim",
+          "tints": []
+        },
+        "when": "medievalprogression:steel"
+      }
     ],
     "fallback": {
       "type": "minecraft:model",

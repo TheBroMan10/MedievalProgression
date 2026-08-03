@@ -86,6 +86,14 @@
           "tints": []
         },
         "when": "medievalprogression:rosegold"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/netherite_boots_steel_trim",
+          "tints": []
+        },
+        "when": "medievalprogression:steel"
       }
     ],
     "fallback": {

@@ -85,6 +85,13 @@
           "model": "minecraft:item/turtle_helmet_rosegold_trim"
         },
         "when": "medievalprogression:rosegold"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minecraft:item/turtle_helmet_steel_trim"
+        },
+        "when": "medievalprogression:steel"
       }
     ],
     "fallback": {
