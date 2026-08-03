@@ -14,23 +14,6 @@ public class AlloyRecipe {
     private final int secondaryChance;
 
 
-    public AlloyRecipe(
-            ItemStack input1,
-            ItemStack input2,
-            ItemStack result
-    ) {
-
-        this(
-                input1,
-                input2,
-                result,
-                100,
-                ItemStack.EMPTY,
-                0
-        );
-
-    }
-
 
     public AlloyRecipe(
             ItemStack input1,
